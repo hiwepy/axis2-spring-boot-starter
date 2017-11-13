@@ -4,201 +4,28 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.5.8.RELEASE</version>
-		<relativePath /> <!-- lookup parent from repository -->
+		<groupId>com.github.vindell</groupId>
+		<artifactId>spring-boot-extend-starters</artifactId>
+		<version>1.5.8-SNAPSHOT</version>
 	</parent>
-
+	
 	<artifactId>spring-boot-starter-axis2</artifactId>
-	<packaging>jar</packaging>
-
-	<name>spring-boot-starter-axis2</name>
-	<url></url>
-	<description>starter for cas client</description>
-
-	<licenses>
-		<license>
-			<name>The Apache Software License, Version 2.0</name>
-			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-			<distribution>repo</distribution>
-		</license>
-	</licenses>
-
+	<name>Spring Boot Axis2 Biz Starter</name>
+	<description>Starter for Axis2</description>
+	
 	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<java.version>1.8</java.version>
-		<javax.servlet-api.version>3.1.0</javax.servlet-api.version>
-		<javax.activation.version>1.1.1</javax.activation.version>
+		<!-- Dependency versions -->
+		<activation.version>1.1.1</activation.version>
+		<axis.version>1.4</axis.version>
+		<axis-schema.version>1.3</axis-schema.version>
+		<axis-wsdl4j.version>1.5.1</axis-wsdl4j.version>
 		<axis2.version>1.7.6</axis2.version>
 		<axis2-api.version>1.4.1</axis2-api.version>
+		<woodstox-asl.version>4.0.0</woodstox-asl.version>
+		<wsdl4j.version>1.6.3</wsdl4j.version>
 		<xmlschema-core.version>2.0.2</xmlschema-core.version>
 	</properties>
 	
-	<dependencyManagement>
-		<dependencies>
-			
-			<!-- The JavaBeans(TM) Activation Framework is used by the JavaMail(TM) API to manage MIME data -->
-			<dependency>
-				<groupId>javax.activation</groupId>
-				<artifactId>activation</artifactId>
-				<version>${javax.activation.version}</version>
-			</dependency>
-			
-			<dependency>
-				<groupId>org.apache.ws.xmlschema</groupId>
-				<artifactId>xmlschema-core</artifactId>
-				<version>${xmlschema-core.version}</version>
-			</dependency>
-			
-			<!-- axis2 -->
-			<dependency>
-				<groupId>org.apache.axis2</groupId>
-				<artifactId>axis2-kernel</artifactId>
-				<version>${axis2.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.axis2</groupId>
-				<artifactId>axis2-adb</artifactId>
-				<version>${axis2.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.axis2</groupId>
-				<artifactId>axis2-adb-codegen</artifactId>
-				<version>${axis2.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.axis2</groupId>
-				<artifactId>axis2-corba</artifactId>
-				<version>${axis2.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.axis2</groupId>
-				<artifactId>axis2-codegen</artifactId>
-				<version>${axis2.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.axis2</groupId>
-				<artifactId>axis2-fastinfoset</artifactId>
-				<version>${axis2.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.axis2</groupId>
-				<artifactId>axis2-jaxbri</artifactId>
-				<version>${axis2.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.axis2</groupId>
-				<artifactId>axis2-jibx</artifactId>
-				<version>${axis2.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.axis2</groupId>
-				<artifactId>axis2-java2wsdl</artifactId>
-				<version>${axis2.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.axis2</groupId>
-				<artifactId>axis2-jaxws</artifactId>
-				<version>${axis2.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.axis2</groupId>
-				<artifactId>axis2-jaxws-api</artifactId>
-				<version>${axis2-api.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.axis2</groupId>
-				<artifactId>axis2-jws-api</artifactId>
-				<version>${axis2-api.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.axis2</groupId>
-				<artifactId>axis2-json</artifactId>
-				<version>${axis2.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.axis2</groupId>
-				<artifactId>axis2-metadata</artifactId>
-				<version>${axis2.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.axis2</groupId>
-				<artifactId>axis2-mtompolicy</artifactId>
-				<version>${axis2.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.axis2</groupId>
-				<artifactId>axis2-saaj</artifactId>
-				<version>${axis2.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.axis2</groupId>
-				<artifactId>axis2-saaj-api</artifactId>
-				<version>${axis2-api.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.axis2</groupId>
-				<artifactId>axis2-security</artifactId>
-				<version>${axis2.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.axis2</groupId>
-				<artifactId>axis2-spring</artifactId>
-				<version>${axis2.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.axis2</groupId>
-				<artifactId>axis2-xmlbeans</artifactId>
-				<version>${axis2.version}</version>
-			</dependency>
-			<!--axis2-transport-->
-			<dependency>
-				<groupId>org.apache.axis2</groupId>
-				<artifactId>axis2-transport-base</artifactId>
-				<version>${axis2.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.axis2</groupId>
-				<artifactId>axis2-transport-http</artifactId>
-				<exclusions>
-					<exclusion>
-		                <groupId>org.apache.httpcomponents</groupId>
-		                <artifactId>httpclient</artifactId>
-		            </exclusion>
-				</exclusions>
-				<version>${axis2.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.axis2</groupId>
-				<artifactId>axis2-transport-jms</artifactId>
-				<version>${axis2.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.axis2</groupId>
-				<artifactId>axis2-transport-local</artifactId>
-				<version>${axis2.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.axis2</groupId>
-				<artifactId>axis2-transport-mail</artifactId>
-				<version>${axis2.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.axis2</groupId>
-				<artifactId>axis2-transport-tcp</artifactId>
-				<version>${axis2.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.axis2</groupId>
-				<artifactId>axis2-transport-udp</artifactId>
-				<version>${axis2.version}</version>
-			</dependency>
-			
-		</dependencies>
-	</dependencyManagement>
-
 	<dependencies>
 
 		<!-- Java Servlet API -->
@@ -229,12 +56,6 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		<!-- Spring Boot Test 依赖 -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
 		<!-- @ConfigurationProperties annotation processing (metadata for IDEs) -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -247,10 +68,11 @@
 			<artifactId>spring-boot-autoconfigure</artifactId>
 		</dependency>
  		
- 		 <!-- The JavaBeans(TM) Activation Framework is used by the JavaMail(TM) API to manage MIME data -->
+ 		<!-- The JavaBeans(TM) Activation Framework is used by the JavaMail(TM) API to manage MIME data -->
 		<dependency>
 			<groupId>javax.activation</groupId>
 			<artifactId>activation</artifactId>
+			<version>${activation.version}</version>
 		</dependency>
 		
 		<!--<dependency> <groupId>org.apache.ws.commons.axiom</groupId> 
@@ -262,43 +84,18 @@
 		<dependency>
 			<groupId>org.apache.ws.xmlschema</groupId>
 			<artifactId>xmlschema-core</artifactId>
+			<version>${xmlschema-core.version}</version>
 		</dependency>
-
+		
+		<!-- Axis2 : http://mvnrepository.com/artifact/org.apache.axis2 -->
 		<dependency>
 			<groupId>org.apache.axis2</groupId>
 			<artifactId>axis2-kernel</artifactId>
-			<exclusions>
-				<exclusion>
-					<groupId>javax.servlet</groupId>
-					<artifactId>servlet-api</artifactId>
-				</exclusion>
-				<exclusion>
-					<artifactId>jaxen</artifactId>
-					<groupId>jaxen</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>geronimo-ws-metadata_2.0_spec</artifactId>
-					<groupId>org.apache.geronimo.specs</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>jsr311-api</artifactId>
-					<groupId>javax.ws.rs</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>geronimo-jta_1.1_spec</artifactId>
-					<groupId>org.apache.geronimo.specs</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>apache-mime4j-core</artifactId>
-					<groupId>org.apache.james</groupId>
-				</exclusion>
+			<version>${axis2.version}</version>
+			<exclusions>				
 				<exclusion>
 					<artifactId>geronimo-activation_1.1_spec</artifactId>
 					<groupId>org.apache.geronimo.specs</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>xmlschema-core</artifactId>
-					<groupId>org.apache.ws.xmlschema</groupId>
 				</exclusion>
 				<exclusion>
 					<artifactId>geronimo-stax-api_1.0_spec</artifactId>
@@ -309,6 +106,7 @@
 		<dependency>
 			<groupId>org.apache.axis2</groupId>
 			<artifactId>axis2-adb</artifactId>
+			<version>${axis2.version}</version>
 			<exclusions>
 				<exclusion>
 					<artifactId>geronimo-activation_1.1_spec</artifactId>
@@ -317,32 +115,19 @@
 			</exclusions>
 		</dependency>
 		<dependency>
-		    <groupId>org.apache.axis2</groupId>
-		    <artifactId>axis2-jaxws</artifactId>
-		    <exclusions>
-		    	<exclusion>
-		    		<artifactId>geronimo-javamail_1.4_spec</artifactId>
-		    		<groupId>org.apache.geronimo.specs</groupId>
-		    	</exclusion>
-		    </exclusions>
-		</dependency>
-		<!-- <dependency>
 			<groupId>org.apache.axis2</groupId>
 			<artifactId>axis2-adb-codegen</artifactId>
-			<exclusions>
-				<exclusion>
-					<artifactId>commons-cli</artifactId>
-					<groupId>commons-cli</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>xmlschema-core</artifactId>
-					<groupId>org.apache.ws.xmlschema</groupId>
-				</exclusion>
-			</exclusions>
-		</dependency> -->
+			<version>${axis2.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.axis2</groupId>
+			<artifactId>axis2-corba</artifactId>
+			<version>${axis2.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>org.apache.axis2</groupId>
 			<artifactId>axis2-codegen</artifactId>
+			<version>${axis2.version}</version>
 			<exclusions>
 				<exclusion>
 					<artifactId>jaxws-tools</artifactId>
@@ -350,6 +135,175 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.axis2</groupId>
+			<artifactId>axis2-fastinfoset</artifactId>
+			<version>${axis2.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.axis2</groupId>
+			<artifactId>axis2-jaxbri</artifactId>
+			<version>${axis2.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.axis2</groupId>
+			<artifactId>axis2-jibx</artifactId>
+			<version>${axis2.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.axis2</groupId>
+			<artifactId>axis2-java2wsdl</artifactId>
+			<version>${axis2.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.axis2</groupId>
+		    <artifactId>axis2-jaxws</artifactId>
+			<version>${axis2.version}</version>
+		    <exclusions>
+		    	<exclusion>
+		    		<artifactId>geronimo-javamail_1.4_spec</artifactId>
+		    		<groupId>org.apache.geronimo.specs</groupId>
+		    	</exclusion>
+		    </exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.axis2</groupId>
+			<artifactId>axis2-jaxws-api</artifactId>
+			<version>${axis2-api.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.axis2</groupId>
+			<artifactId>axis2-jws-api</artifactId>
+			<version>${axis2-api.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.axis2</groupId>
+			<artifactId>axis2-json</artifactId>
+			<version>${axis2.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.axis2</groupId>
+			<artifactId>axis2-metadata</artifactId>
+			<version>${axis2.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.axis2</groupId>
+			<artifactId>axis2-mtompolicy</artifactId>
+			<version>${axis2.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.axis2</groupId>
+			<artifactId>axis2-saaj</artifactId>
+			<version>${axis2.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.axis2</groupId>
+			<artifactId>axis2-saaj-api</artifactId>
+			<version>${axis2-api.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.axis2</groupId>
+			<artifactId>axis2-security</artifactId>
+			<version>${axis2.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.axis2</groupId>
+			<artifactId>axis2-spring</artifactId>
+			<version>${axis2.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.axis2</groupId>
+			<artifactId>axis2-xmlbeans</artifactId>
+			<version>${axis2.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.axis2</groupId>
+			<artifactId>addressing</artifactId>
+			<version>${axis2.version}</version>
+			<type>mar</type>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.xml.ws</groupId>
+			<artifactId>jaxws-rt</artifactId>
+			<version>2.1.3</version>
+			<exclusions>
+				<exclusion>
+					<groupId>javax.xml.ws</groupId>
+					<artifactId>jaxws-api</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.sun.xml.bind</groupId>
+					<artifactId>jaxb-impl</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.sun.xml.messaging.saaj</groupId>
+					<artifactId>saaj-impl</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.sun.xml.stream.buffer</groupId>
+					<artifactId>streambuffer</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.sun.xml.stream</groupId>
+					<artifactId>sjsxp</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.jvnet.staxex</groupId>
+					<artifactId>stax-ex</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.sun.org.apache.xml.internal</groupId>
+					<artifactId>resolver</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.jvnet</groupId>
+					<artifactId>mimepull</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<!--axis2-transport-->
+		<dependency>
+			<groupId>org.apache.axis2</groupId>
+			<artifactId>axis2-transport-base</artifactId>
+			<version>${axis2.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.axis2</groupId>
+			<artifactId>axis2-transport-http</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.apache.httpcomponents</groupId>
+					<artifactId>httpclient</artifactId>
+				</exclusion>
+			</exclusions>
+			<version>${axis2.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.axis2</groupId>
+			<artifactId>axis2-transport-jms</artifactId>
+			<version>${axis2.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.axis2</groupId>
+			<artifactId>axis2-transport-local</artifactId>
+			<version>${axis2.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.axis2</groupId>
+			<artifactId>axis2-transport-mail</artifactId>
+			<version>${axis2.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.axis2</groupId>
+			<artifactId>axis2-transport-tcp</artifactId>
+			<version>${axis2.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.axis2</groupId>
+			<artifactId>axis2-transport-udp</artifactId>
+			<version>${axis2.version}</version>
+		</dependency>
+		
 		<dependency>
 			<groupId>org.apache.axis2</groupId>
 			<artifactId>axis2-java2wsdl</artifactId>
@@ -378,192 +332,6 @@
 		</dependency>
 
 	</dependencies>
-
-	<build>
-		<pluginManagement>
-			<plugins>
-				<!-- 编译插件：编译主代码至主输出目录 -->
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-compiler-plugin</artifactId>
-					<!-- 设置源文件编码方式 -->
-					<configuration>
-						<defaultLibBundleDir>lib</defaultLibBundleDir>
-						<!-- 源代码编译版本 -->
-						<source>${java.version}</source>
-						<!-- 目标平台编译版本 -->
-						<target>${java.version}</target>
-						<!-- 字符集编码 -->
-						<encoding>${project.build.sourceEncoding}</encoding>
-						<!-- -->
-						<maxmem>512M</maxmem>
-					</configuration>
-				</plugin>
-				<!-- 资源插件：复制主资源文件至主输出目录 -->
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-resources-plugin</artifactId>
-					<!-- 解决资源文件的编码问题 -->
-					<configuration>
-						<!-- 字符集编码 -->
-						<encoding>${project.build.sourceEncoding}</encoding>
-					</configuration>
-					<!-- 复制测试资源文件至测试输出目录复制resources到test-classess -->
-					<executions>
-						<execution>
-							<id>copy-resources</id>
-							<phase>validate</phase>
-							<goals>
-								<goal>copy-resources</goal>
-							</goals>
-							<configuration>
-								<outputDirectory>${basedir}/target/test-classes</outputDirectory>
-								<resources>
-									<resource>
-										<directory>src/main/resources</directory>
-										<!--<filtering>true</filtering> -->
-									</resource>
-								</resources>
-							</configuration>
-						</execution>
-					</executions>
-					<dependencies>
-						<dependency>
-							<groupId>org.apache.maven.shared</groupId>
-							<artifactId>maven-filtering</artifactId>
-							<version>1.3</version>
-						</dependency>
-					</dependencies>
-				</plugin>
-				<!-- 单元测试插件 ：执行测试用例 -->
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-surefire-plugin</artifactId>
-					<configuration>
-						<!-- 跳过单元测试 -->
-						<skip>true</skip>
-						<skipTests>true</skipTests>
-						<!-- forkMode 可设置值有 “never”， “once”， “always” 和 “pertest”。 pretest： 
-							每一个测试创建一个新进程，为每个测试创建新的JVM是单独测试的最彻底方式，但也是最慢的，不适合hudson上持续回归。 once：在一个进程中进行所有测试。once为默认设置，在Hudson上持续回归时建议使用默认设置。 
-							always：在一个进程中并行的运行脚本，Junit4.7以上版本才可以使用，surefire的版本要在2.6以上提供这个功能，其中 threadCount：执行时，指定可分配的线程数量。只和参数parallel配合使用有效。默认：5。 -->
-						<forkMode>once</forkMode>
-						<argLine>-Xmx1024m -XX:PermSize=256m -XX:MaxPermSize=256m</argLine>
-						<additionalClasspathElements>
-							<additionalClasspathElement>
-								${basedir}/target/test-classes
-							</additionalClasspathElement>
-						</additionalClasspathElements>
-						<includes>
-							<include>**/*Test.java</include>
-						</includes>
-						<excludes>
-							<exclude>**/TestBean.java</exclude>
-						</excludes>
-					</configuration>
-				</plugin>
-				<!-- jar包生成插件 ：创建项目jar包 -->
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-jar-plugin</artifactId>
-					<!-- 打包jar文件时，配置manifest文件，加入lib包的jar依赖 -->
-					<configuration>
-						<archive>
-							<manifest>
-								<addClasspath>true</addClasspath>
-							</manifest>
-						</archive>
-					</configuration>
-				</plugin>
-				<!-- 安装插件：将项目输出构件安装到本地仓库 -->
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-install-plugin</artifactId>
-				</plugin>
-				<!-- 发布插件 ：将项目输出构件部署到远程仓库 -->
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-deploy-plugin</artifactId>
-				</plugin>
-				<!-- 源码插件:发布时自动将源码同时发布 -->
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-source-plugin</artifactId>
-					<!-- 打包source文件为jar文件 -->
-					<configuration>
-						<testFailureIgnore>true</testFailureIgnore>
-						<attach>true</attach>
-						<encoding>${project.build.sourceEncoding}</encoding>
-					</configuration>
-					<executions>
-						<execution>
-							<id>attach-sources</id>
-							<phase>package</phase>
-							<goals>
-								<goal>jar-no-fork</goal>
-							</goals>
-						</execution>
-					</executions>
-				</plugin>
-				<!-- 文档插件:发布时自动生成文档 -->
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-javadoc-plugin</artifactId>
-					<configuration>
-						<aggregate>true</aggregate>
-						<charset>UTF-8</charset>
-						<encoding>${project.build.sourceEncoding}</encoding>
-						<docencoding>UTF-8</docencoding>
-					</configuration>
-					<executions>
-						<execution>
-							<id>attach-javadocs</id>
-							<phase>package</phase>
-							<goals>
-								<goal>jar</goal>
-							</goals>
-						</execution>
-					</executions>
-				</plugin>
-			</plugins>
-		</pluginManagement>
-		<plugins>
-			<!-- 资源插件：复制主资源文件至主输出目录 -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-resources-plugin</artifactId>
-			</plugin>
-			<!-- 编译插件：编译主代码至主输出目录 -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-			</plugin>
-			<!-- 单元测试插件 ：执行测试用例 -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-			</plugin>
-			<!-- jar包生成插件 ：创建项目jar包 -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jar-plugin</artifactId>
-			</plugin>
-			<!-- 安装插件：将项目输出构件安装到本地仓库 -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-install-plugin</artifactId>
-			</plugin>
-			<!-- 发布插件 ：将项目输出构件部署到远程仓库 -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-deploy-plugin</artifactId>
-			</plugin>
-			<!-- 源码插件:发布时自动将源码同时发布 -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-source-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
-
+	
 
 </project>
