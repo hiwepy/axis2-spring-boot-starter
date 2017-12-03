@@ -4,15 +4,35 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>com.github.vindell</groupId>
-		<artifactId>spring-boot-extend-starters</artifactId>
-		<version>1.5.8-SNAPSHOT</version>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.9.RELEASE</version>
+		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	
+
+	<groupId>com.github.vindell</groupId>
 	<artifactId>spring-boot-starter-axis2</artifactId>
-	<name>Spring Boot Axis2 Biz Starter</name>
+	<version>1.5.9-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>spring-boot-starter-axis2</name>
+	<url>https://github.com/vindell/spring-boot-starter-axis2</url>
 	<description>Starter for Axis2</description>
-	
+
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<scm>
+		<url>https://github.com/vindell/spring-boot-starter-axis2</url>
+		<connection>scm:git:git://github.com/vindell/spring-boot-starter-axis2.git</connection>
+		<developerConnection>scm:git:git@github.com/vindell/spring-boot-starter-axis2.git</developerConnection>
+	</scm>
+
 	<properties>
 		<!-- Dependency versions -->
 		<activation.version>1.1.1</activation.version>
@@ -25,7 +45,7 @@
 		<wsdl4j.version>1.6.3</wsdl4j.version>
 		<xmlschema-core.version>2.0.2</xmlschema-core.version>
 	</properties>
-	
+
 	<dependencies>
 
 		<!-- Java Servlet API -->
@@ -40,9 +60,9 @@
 			<artifactId>slf4j-api</artifactId>
 		</dependency>
 		<dependency>
-		    <groupId>org.slf4j</groupId>
-		    <artifactId>slf4j-log4j12</artifactId>
-		    <scope>test</scope>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<scope>test</scope>
 		</dependency>
 
 		<!-- Core starter, including auto-configuration support, logging and YAML -->
@@ -67,16 +87,17 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-autoconfigure</artifactId>
 		</dependency>
- 		
- 		<!-- The JavaBeans(TM) Activation Framework is used by the JavaMail(TM) API to manage MIME data -->
+
+		<!-- The JavaBeans(TM) Activation Framework is used by the JavaMail(TM) 
+			API to manage MIME data -->
 		<dependency>
 			<groupId>javax.activation</groupId>
 			<artifactId>activation</artifactId>
 			<version>${activation.version}</version>
 		</dependency>
-		
-		<!--<dependency> <groupId>org.apache.ws.commons.axiom</groupId> 
-			<artifactId>axiom-api</artifactId> </dependency> <dependency> <groupId>org.apache.ws.commons.axiom</groupId> 
+
+		<!--<dependency> <groupId>org.apache.ws.commons.axiom</groupId> <artifactId>axiom-api</artifactId> 
+			</dependency> <dependency> <groupId>org.apache.ws.commons.axiom</groupId> 
 			<artifactId>axiom-impl</artifactId> </dependency> <dependency> <groupId>stax</groupId> 
 			<artifactId>stax-api</artifactId> </dependency> <dependency> <groupId>wsdl4j</groupId> 
 			<artifactId>wsdl4j</artifactId> </dependency> -->
@@ -86,13 +107,13 @@
 			<artifactId>xmlschema-core</artifactId>
 			<version>${xmlschema-core.version}</version>
 		</dependency>
-		
+
 		<!-- Axis2 : http://mvnrepository.com/artifact/org.apache.axis2 -->
 		<dependency>
 			<groupId>org.apache.axis2</groupId>
 			<artifactId>axis2-kernel</artifactId>
 			<version>${axis2.version}</version>
-			<exclusions>				
+			<exclusions>
 				<exclusion>
 					<artifactId>geronimo-activation_1.1_spec</artifactId>
 					<groupId>org.apache.geronimo.specs</groupId>
@@ -156,15 +177,15 @@
 			<version>${axis2.version}</version>
 		</dependency>
 		<dependency>
-		    <groupId>org.apache.axis2</groupId>
-		    <artifactId>axis2-jaxws</artifactId>
+			<groupId>org.apache.axis2</groupId>
+			<artifactId>axis2-jaxws</artifactId>
 			<version>${axis2.version}</version>
-		    <exclusions>
-		    	<exclusion>
-		    		<artifactId>geronimo-javamail_1.4_spec</artifactId>
-		    		<groupId>org.apache.geronimo.specs</groupId>
-		    	</exclusion>
-		    </exclusions>
+			<exclusions>
+				<exclusion>
+					<artifactId>geronimo-javamail_1.4_spec</artifactId>
+					<groupId>org.apache.geronimo.specs</groupId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.axis2</groupId>
@@ -201,11 +222,11 @@
 			<artifactId>axis2-saaj-api</artifactId>
 			<version>${axis2-api.version}</version>
 		</dependency>
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.apache.axis2</groupId>
 			<artifactId>axis2-security</artifactId>
 			<version>${axis2.version}</version>
-		</dependency>
+		</dependency> -->
 		<dependency>
 			<groupId>org.apache.axis2</groupId>
 			<artifactId>axis2-spring</artifactId>
@@ -261,7 +282,7 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		<!--axis2-transport-->
+		<!--axis2-transport -->
 		<dependency>
 			<groupId>org.apache.axis2</groupId>
 			<artifactId>axis2-transport-base</artifactId>
@@ -303,10 +324,11 @@
 			<artifactId>axis2-transport-udp</artifactId>
 			<version>${axis2.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.apache.axis2</groupId>
 			<artifactId>axis2-java2wsdl</artifactId>
+			<version>${axis2.version}</version>
 			<exclusions>
 				<exclusion>
 					<groupId>org.apache.ant</groupId>
@@ -332,6 +354,6 @@
 		</dependency>
 
 	</dependencies>
-	
+
 
 </project>
