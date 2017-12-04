@@ -1,2 +1,1 @@
-# spring-boot-starter-casclient
-casclient starter for spring boot
+# spring-boot-starter-axis2
