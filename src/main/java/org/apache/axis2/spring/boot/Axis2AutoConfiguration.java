@@ -14,7 +14,6 @@ import org.springframework.core.Ordered;
 @ConditionalOnProperty(prefix = Axis2Properties.PREFIX, value = "enabled", havingValue = "true")
 @EnableConfigurationProperties({ Axis2Properties.class })
 @AutoConfigureOrder(Ordered.LOWEST_PRECEDENCE - 8)
-@SuppressWarnings({ "unchecked", "rawtypes" })
 public class Axis2AutoConfiguration implements ApplicationContextAware {
 
 	private ApplicationContext applicationContext;
