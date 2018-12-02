@@ -364,7 +364,7 @@
 	<properties>
 		<!-- Dependency versions -->
 		<activation.version>1.1.1</activation.version>
-		<axis2.version>1.7.7</axis2.version>
+		<axis2.version>1.7.9</axis2.version>
 		<axis2-api.version>1.4.1</axis2-api.version>
 		<woodstox-asl.version>4.0.0</woodstox-asl.version>
 		<wsdl4j.version>1.6.3</wsdl4j.version>
@@ -442,7 +442,8 @@
 			<version>${xmlschema-core.version}</version>
 		</dependency>
 
-		<!-- Axis2 : http://mvnrepository.com/artifact/org.apache.axis2 -->
+		<!-- https://mvnrepository.com/artifact/org.apache.axis2/axis2-kernel -->
+		<!-- Core Parts of Axis2. This includes Axis2 engine, Client API, Addressing support, etc. -->
 		<dependency>
 			<groupId>org.apache.axis2</groupId>
 			<artifactId>axis2-kernel</artifactId>
@@ -458,6 +459,8 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.axis2/axis2-adb -->
+		<!-- Axis2 Data Binding module  -->
 		<dependency>
 			<groupId>org.apache.axis2</groupId>
 			<artifactId>axis2-adb</artifactId>
@@ -469,6 +472,7 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+		<!-- ADB code generation support for Axis2 -->
 		<dependency>
 			<groupId>org.apache.axis2</groupId>
 			<artifactId>axis2-adb-codegen</artifactId>
@@ -479,6 +483,7 @@
 			<artifactId>axis2-corba</artifactId>
 			<version>${axis2.version}</version>
 		</dependency>
+		<!-- Axis2 Code Generation module  -->
 		<dependency>
 			<groupId>org.apache.axis2</groupId>
 			<artifactId>axis2-codegen</artifactId>
@@ -505,11 +510,13 @@
 			<artifactId>axis2-jibx</artifactId>
 			<version>${axis2.version}</version>
 		</dependency>
+		<!-- To generate WSDL file for a given Java class  -->
 		<dependency>
 			<groupId>org.apache.axis2</groupId>
 			<artifactId>axis2-java2wsdl</artifactId>
 			<version>${axis2.version}</version>
 		</dependency>
+		<!-- Axis2 JAXWS Implementation  -->
 		<dependency>
 			<groupId>org.apache.axis2</groupId>
 			<artifactId>axis2-jaxws</artifactId>
@@ -541,11 +548,13 @@
 			<artifactId>axis2-metadata</artifactId>
 			<version>${axis2.version}</version>
 		</dependency>
+		<!-- Axis2 : MTOM Policy  -->
 		<dependency>
 			<groupId>org.apache.axis2</groupId>
 			<artifactId>axis2-mtompolicy</artifactId>
 			<version>${axis2.version}</version>
 		</dependency>
+		<!-- Axis2 SAAJ implementation  -->
 		<dependency>
 			<groupId>org.apache.axis2</groupId>
 			<artifactId>axis2-saaj</artifactId>
@@ -617,11 +626,13 @@
 			</exclusions>
 		</dependency>
 		<!--axis2-transport -->
+		<!-- Apache Axis2 - Base Transport  -->
 		<dependency>
 			<groupId>org.apache.axis2</groupId>
 			<artifactId>axis2-transport-base</artifactId>
 			<version>${axis2.version}</version>
 		</dependency>
+		<!-- This inclues all the available transports in Axis2  -->
 		<dependency>
 			<groupId>org.apache.axis2</groupId>
 			<artifactId>axis2-transport-http</artifactId>
@@ -633,11 +644,13 @@
 			</exclusions>
 			<version>${axis2.version}</version>
 		</dependency>
+		<!-- Apache Axis2 - JMS Transport  -->
 		<dependency>
 			<groupId>org.apache.axis2</groupId>
 			<artifactId>axis2-transport-jms</artifactId>
 			<version>${axis2.version}</version>
 		</dependency>
+		<!-- This inclues all the available transports in Axis2  -->
 		<dependency>
 			<groupId>org.apache.axis2</groupId>
 			<artifactId>axis2-transport-local</artifactId>
