@@ -15,7 +15,7 @@ Spring Boot Starter For Axis2
 <dependency>
 	<groupId>${project.groupId}</groupId>
 	<artifactId>axis2-spring-boot-starter</artifactId>
-	<version>${project.version}</version>
+	<version>1.0.1.RELEASE</version>
 </dependency>
 ```
 
