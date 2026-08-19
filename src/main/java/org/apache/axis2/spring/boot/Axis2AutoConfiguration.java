@@ -23,15 +23,32 @@ public class Axis2AutoConfiguration implements ApplicationContextAware {
 	private ApplicationContext applicationContext;
  
 	@Bean
+	/**
+	 * config Context.
+	 *
+	 * @return the result
+	 * @throws Exception if an error occurs
+	 */
 	public ConfigurationContext configContext() throws Exception {
 		return ConfigurationContextFactory.createDefaultConfigurationContext();
 	}
 	
 	@Override
+	/**
+	 * Sets the application context.
+	 *
+	 * @param applicationContext the application context
+	 * @throws BeansException if an error occurs
+	 */
 	public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
 		this.applicationContext = applicationContext;
 	}
 
+	/**
+	 * Returns the application context.
+	 *
+	 * @return the application context
+	 */
 	public ApplicationContext getApplicationContext() {
 		return applicationContext;
 	}
